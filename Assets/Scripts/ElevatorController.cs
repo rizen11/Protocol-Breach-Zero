@@ -6,14 +6,16 @@ public class ElevatorController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject[] waypoints;
+    [SerializeField] private GameObject trigger1;
+    [SerializeField] private GameObject trigger2;
     private int currentWaypointIndex = 0;
 
     [SerializeField] private float speed = 2f;
     
-    void Start()
+    /*void Start()
     {
         
-    }
+    }*/
 
     
     void Update()
@@ -25,8 +27,15 @@ public class ElevatorController : MonoBehaviour
                 currentWaypointIndex = 0;
             }
         }
-        Debug.Log(Vector2.Distance(player.transform.position, transform.position));
+        //Debug.Log(Vector2.Distance(player.transform.position, transform.position));
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
-        //player.transform.position = Vector3.MoveTowards(player.transform.position, player.transform.position.y + speed, Time.deltaTime);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        other.transform.SetParent(transform);
+    }
+
+    private void OnCollisionExit2D(Collision2D other) {
+        other.transform.SetParent(null);
     }
 }
