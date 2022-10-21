@@ -11,12 +11,12 @@ public class Striker : Entity
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
-        lives = 10000;
     }
 
     private void Start()
     {
         direction = transform.right;
+        lives = 10000;  
     }
 
     private void Move()
@@ -38,7 +38,7 @@ public class Striker : Entity
     {
         if (collision.gameObject == Hero.Instance.gameObject)
         {
-            Hero.Instance.GetDamage();
+            Hero.Instance.GetDamage(1);
         }
     }
 }

@@ -5,9 +5,9 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected int lives;
-    public virtual void GetDamage()
+    public virtual void GetDamage(int damage)
     {
-        lives--;
+        lives=lives-damage;
         Debug.Log(lives);
         if (lives < 1)
             Die();
@@ -17,4 +17,5 @@ public class Entity : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
+   
 }
