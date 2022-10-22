@@ -11,12 +11,12 @@ public class Striker : Entity
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
+        lives = 10000;
     }
 
     private void Start()
     {
-        direction = transform.right;
-        lives = 10000;  
+        direction = transform.right; 
     }
 
     private void Move()
