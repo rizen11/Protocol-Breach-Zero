@@ -16,7 +16,7 @@ public class Striker : Entity
 
     private void Start()
     {
-        direction = transform.right;
+        direction = transform.right; 
     }
 
     private void Move()
@@ -38,7 +38,7 @@ public class Striker : Entity
     {
         if (collision.gameObject == Hero.Instance.gameObject)
         {
-            Hero.Instance.GetDamage();
+            Hero.Instance.GetDamage(1);
         }
     }
 }

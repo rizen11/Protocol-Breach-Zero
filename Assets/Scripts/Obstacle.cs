@@ -8,7 +8,7 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.gameObject == Hero.Instance.gameObject)
     {
-        Hero.Instance.GetDamage();
+        Hero.Instance.GetDamage(1);
     }
 }
 }
