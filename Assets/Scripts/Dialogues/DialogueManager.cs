@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
 
    public void StartDialogue(Dialogue dialogue)
    {
-    dialAnim.SetBool("dialogueOpen", true );
+    dialAnim.SetBool("dialogueOpen", true);
     startAnim.SetBool("startOpen", false);
 
     nameText.text = dialogue.name;
