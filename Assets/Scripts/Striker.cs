@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Striker : Entity
 {
-    private float speed = 1.5f;
+    [SerializeField] private int lives;
+    [SerializeField] private float speed = 1.5f;
     private Vector3 direction;
     private SpriteRenderer sprite;
+    private RoomController room;
 
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
-        lives = 10000;
+        room = GetComponentInParent<RoomController>();
     }
 
     private void Start()
@@ -40,5 +42,11 @@ public class Striker : Entity
         {
             Hero.Instance.GetDamage(1);
         }
+    }
+
+    public override void Die()
+    {
+        room.enemies.Remove(this.gameObject);
+        Destroy(this.gameObject);
     }
 }
