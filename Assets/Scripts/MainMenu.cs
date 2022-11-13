@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
-	int m_LevelNumber = 2; //Переменна, отвечающая за то, какой уровень загружать.
+	int m_LevelNumber = 4; //Переменна, отвечающая за то, какой уровень загружать.
 	public void PlayGame()
 	{
 	 	SceneManager.LoadScene(LevelNumber); //Загружает сцену один(см. BuildSettings) Решение для загрузики последующих уровней:(SceneManager.GetActiveScene().buildIndex + 1);
