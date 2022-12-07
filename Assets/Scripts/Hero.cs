@@ -12,12 +12,18 @@ public class Hero : Entity
     public bool isRecharged = true;
     public bool isAttacking1 = false;
 
+    public Transform attackPosRight;
+    public Transform attackPosLeft;
     public Transform attackPos;
     public float attackRange;
+    public Transform attackPos1Right;
+    public Transform attackPos1Left;
     public Transform attackPos1;
     public float attackRange1;
     public LayerMask enemy;
     private bool facingRight = true;
+
+    private Collider2D selected = null;
 
     [SerializeField] private LayerMask platformLayerMask;
     private Rigidbody2D rb;
@@ -26,6 +32,11 @@ public class Hero : Entity
     private float moveInput;
 
     public static Hero Instance { get; set; }
+
+    private void Start() {
+        attackPos = attackPosLeft;
+        attackPos1 = attackPos1Left;
+    }
 
     private States State
     {
@@ -65,11 +76,21 @@ public class Hero : Entity
         if (facingRight == false && moveInput > 0)
         {
             Flip();
+            attackPos = attackPosLeft;
+            attackPos1 = attackPos1Left;
         }
         else if (facingRight == true && moveInput < 0)
         {
             Flip();
+            attackPos = attackPosRight;
+            attackPos1 = attackPos1Right;
         }
+
+        if (selected != null && selected.tag == "Bonus" && Input.GetKey(KeyCode.F)) {
+            this.lives = this.lives + 10;
+        }
+
+        Debug.Log(this.lives);
     }
 
     private void Run()
@@ -133,9 +154,11 @@ public class Hero : Entity
     private void OnAttack()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPos.position, attackRange, enemy);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            colliders[i].GetComponent<Entity>().GetDamage(20);
+        if (colliders.Length > 0) {
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                colliders[i].GetComponent<Entity>().GetDamage(20);
+            }
         }
     }
 
@@ -178,6 +201,12 @@ public class Hero : Entity
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Bonus") {
+            selected = other;
+        }
     }
 }
 

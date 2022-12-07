@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Start
   - Enemy
+  - NPC
+  - Bonus
   layers:
   - Default
   - TransparentFX
@@ -20,10 +22,6 @@ TagManager:
   - Background
   - 
   - enemy
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

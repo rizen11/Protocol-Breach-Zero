@@ -50,7 +50,7 @@ public class RoomController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("entered collision " + other.tag);
-        if (other.tag == "Player")
+        if (other.tag == "Player" && enemies.Count > 0) 
         {
             //isAction = true;
             currentWaypointIndex = 0;

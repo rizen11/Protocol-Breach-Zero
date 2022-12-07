@@ -46,7 +46,7 @@ public class Striker : Entity
 
     public override void Die()
     {
-        room.enemies.Remove(this.gameObject);
+        if (room != null) room.enemies.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
 }
