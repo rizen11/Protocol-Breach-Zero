@@ -18,22 +18,25 @@ public class DialogueManager : MonoBehaviour
     sentences = new Queue<string>();
    }
 
-   public void StartDialogue(Dialogue dialogue)
-   {
-    dialAnim.SetBool("dialogueOpen", true);
-    startAnim.SetBool("startOpen", false);
-
-    nameText.text = dialogue.name;
-    sentences.Clear();
-
-    foreach(string sentence in dialogue.sentences)
+    public void StartDialogue(Dialogue dialogue)
     {
-        sentences.Enqueue(sentence);
+        {
+            dialAnim.SetBool("dialogueOpen", true);
+            startAnim.SetBool("startOpen", false);
+
+            nameText.text = dialogue.name;
+            sentences.Clear();
+
+            foreach (string sentence in dialogue.sentences)
+            {
+                sentences.Enqueue(sentence);
+            }
+            DisplayNextSentence();
+
+        }
     }
-        DisplayNextSentence();
-   }
-   
-   public void DisplayNextSentence()
+
+        public void DisplayNextSentence()
    {
     if(sentences.Count == 0)
     {
