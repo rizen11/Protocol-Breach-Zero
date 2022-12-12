@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Striker : Entity
 {
-    [SerializeField] private int lives;
     [SerializeField] private float speed = 1.5f;
     private Vector3 direction;
     private SpriteRenderer sprite;
@@ -18,6 +17,7 @@ public class Striker : Entity
 
     private void Start()
     {
+        lives = 30000;
         direction = transform.right; 
     }
 

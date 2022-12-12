@@ -90,7 +90,7 @@ public class Hero : Entity
             this.lives = this.lives + 10;
         }
 
-        Debug.Log(this.lives);
+        
     }
 
     private void Run()

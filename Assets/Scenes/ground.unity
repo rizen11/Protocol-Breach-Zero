@@ -6159,6 +6159,26 @@ PrefabInstance:
       propertyPath: lives
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 665274797387225305, guid: f94811df59299804a9f5ece0aa8f8176, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 665274797387225306, guid: f94811df59299804a9f5ece0aa8f8176, type: 3}
+      propertyPath: m_Radius
+      value: 1.0575101
+      objectReference: {fileID: 0}
+    - target: {fileID: 665274797387225306, guid: f94811df59299804a9f5ece0aa8f8176, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 665274797387225306, guid: f94811df59299804a9f5ece0aa8f8176, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.09257388
+      objectReference: {fileID: 0}
+    - target: {fileID: 665274797387225306, guid: f94811df59299804a9f5ece0aa8f8176, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.3018732
+      objectReference: {fileID: 0}
     - target: {fileID: 665274797387225307, guid: f94811df59299804a9f5ece0aa8f8176, type: 3}
       propertyPath: dm
       value: 
