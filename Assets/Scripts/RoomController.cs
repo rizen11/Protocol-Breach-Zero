@@ -33,7 +33,7 @@ public class RoomController : MonoBehaviour
     {
         //if (isAction)
         //{
-        Debug.Log(doorLeft.transform.GetChild(0).transform.position);
+        //Debug.Log(doorLeft.transform.GetChild(0).transform.position);
         doorLeft.transform.GetChild(0).transform.position = Vector2.MoveTowards(
             doorLeft.transform.GetChild(0).transform.position,
             waypointsLeft[currentWaypointIndex].transform.position,
@@ -49,7 +49,7 @@ public class RoomController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("entered collision " + other.tag);
+        //Debug.Log("entered collision " + other.tag);
         if (other.tag == "Player" && enemies.Count > 0) 
         {
             //isAction = true;
