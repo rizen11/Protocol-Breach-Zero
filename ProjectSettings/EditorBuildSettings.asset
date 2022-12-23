@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/menu.unity
-    guid: 8a46b72577573a26292a197f02d222ae
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7e44cdb52acf1ac03a66542cb02b31e5
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/wow.unity
+    guid: dd1b852115fa4c94e84086163a54a1b1
   - enabled: 1
     path: Assets/Scenes/ground.unity
-    guid: 973acbd7d6003014488ebc118221a598
+    guid: c0cacab37493b1742abcffbea26553fa
+  - enabled: 1
+    path: Assets/Scenes/TestGround(for menu).unity
+    guid: 8e74cd505f919611ba64d7ffd3a6c359
   m_configObjects: {}

@@ -3,63 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu: MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    public Hero hero;
-    [SerializeField] KeyCode keyMenuPaused;
-    bool isMenuPaused = false;
-    private void Start()
-    {
-        pauseMenu.SetActive(false);
-    }
+	public static bool GameIsPaused = true; // Use if you want to be able to close the menu via esc. P.s. I will add it later, maybe.
+    // Start is called before the first frame update
+	public GameObject pauseMenuUI;
+    // Update is called once per frame
+    	void Update()
+    	{
+        	if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			Pause();
+		}
+    	}
 
-    private void Update()
-    {
-        ActiveMenu();
-    }
-    void ActiveMenu()
-    {
-        if (Input.GetKeyDown(keyMenuPaused))
-        {
-            isMenuPaused = !isMenuPaused;
-        }
-
-        if (isMenuPaused)
-        {
-            pauseMenu.SetActive(true);
-            hero.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            pauseMenu.SetActive(false);
-            hero.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
-            Time.timeScale = 1f;
-        }
-    }
-
-    public void PauseMenuResume()
-    {
-        isMenuPaused = false;
-        Debug.Log("Продолжить");
-    }
-
-    public void PauseMenuSettings()
-    {
-        Debug.Log("Настройки");
-    }
-
-    public void PauseMenuMainMenu()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
-        Debug.Log("Главное меню");
-    }
-    public void PauseMenuExit()
-    {
-        Debug.Log("Пацаны зацените че могу");
-        Application.Quit();
-    }
+	public void Resume()
+	{
+		pauseMenuUI.SetActive(false);
+		Time.timeScale = 1f;
+		GameIsPaused = false;
+	}
+	
+	void Pause()
+	{
+		pauseMenuUI.SetActive(true);
+		Time.timeScale = 0f;
+		GameIsPaused = true;
+	}
+	public void ExitButton()
+	{
+		SceneManager.LoadScene(0);
+		GameIsPaused = false; 
+		Resume(); //if you don't add this, pausemenu will apear if you go from main menu to the scene
+	}
 }
