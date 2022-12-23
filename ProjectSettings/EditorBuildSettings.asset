@@ -9,15 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7e44cdb52acf1ac03a66542cb02b31e5
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/wow.unity
-    guid: dd1b852115fa4c94e84086163a54a1b1
-  - enabled: 1
-    path: Assets/Scenes/ground.unity
-    guid: c0cacab37493b1742abcffbea26553fa
-  - enabled: 1
     path: Assets/Scenes/TestGround(for menu).unity
     guid: 8e74cd505f919611ba64d7ffd3a6c359
   m_configObjects: {}
